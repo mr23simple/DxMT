@@ -52,7 +52,7 @@ port="`cat /opt/dxmtlogs/config.txt | grep JBOSS_PORT | grep -oP '(?<=").*(?=")'
 
 # WilfFly
 if [ "`cat /opt/dxmtlogs/config.txt | grep WILDFLY | grep -oP '(?<=").*(?=")'`" == "true" ]; then
-	sudo curl -s $ipadd:$port > /dev/null && echo Success || echo Fail >> /opt/dxmtlogs/Application/WildFly/logs.csv;
+	echo `sudo curl -s $ipadd:$port > /dev/null && echo Success || echo Fail` >> /opt/dxmtlogs/Application/WildFly/logs.csv;
 fi
 
 # Apache

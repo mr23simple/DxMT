@@ -1,11 +1,7 @@
 <?php 
-//RabbitMQ Logs
 include 'rabbitmq.php';
-//WildFly Logs
 include 'wildfly.php';
-//Java Logs
 include 'java.php';
-//Apache Logs
 include 'apache.php';
 ?>
 
@@ -56,7 +52,6 @@ include 'apache.php';
 
 	<div class="container">
 	  <h1>Applications</h1>
-	  
 	  <div class="row">
 		<div class="col s12 m6 offset-m3 l4">
 			<div class="card">
@@ -93,7 +88,7 @@ include 'apache.php';
 				<div class="card-image">
 					<img src="./img/rabbitmq.png"> <!-- Put image of RabbitMQ -->
 				</div>
-				<div class="card-content <?php if($rabbitMQLog == "Success"){echo "green darken-4";}elseif($rabbitMQLog == null){echo "grey";}else{echo "red accent-4";} ?>">
+				<div class="card-content <?php if($rabbitMQLog == "Success"){echo "green darken-4";}elseif($rabbitMQLog == 0){echo "grey";}else{echo "red accent-4";} ?>">
 				</div>
 			</div>
 		</div>

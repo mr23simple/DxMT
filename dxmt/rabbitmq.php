@@ -3,9 +3,10 @@
 $RabbitMQLogsFile = "/opt/dxmtlogs/Application/RabbitMQ/logs.csv";
 
 //Open log file
+$y = 0;
 if (($handle = fopen($RabbitMQLogsFile, "r")) === false)
 {
-    $x = 1;
+    $y = 1;
 }
 
 //CSV to JSON
@@ -24,12 +25,13 @@ foreach($data_obj as $x){
 	$result[] = $x->Status;
 }
 
-if($x != 1){
+$rabbitMQLog = null;
+if($y != 1){
 	$rabbitMQLog = end($result);
 	}
 else{
 	$rabbitMQLog = null;
 }	
-
 fclose($handle);
+echo $rabbitMQLog;
 ?>

@@ -3,9 +3,10 @@
 $WildFlyLogsFile = "/opt/dxmtlogs/Application/WildFly/logs.csv";
 
 //Open wildfly log file
+$y = null;
 if (($handle = fopen($WildFlyLogsFile, "r")) === false)
 {
-    $x = 1;
+    $y = 1;
 }
 
 //CSV to JSON
@@ -24,7 +25,7 @@ foreach($data_obj as $x){
 	$result[] = $x->Status;
 }
 
-if($x != 1){
+if($y != 1){
 	$wildflyLog = end($result);
 }
 else{
